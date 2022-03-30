@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/',[OrderController::class, 'index'])->name('index');
+Route::get('/login',[OrderController::class, 'login'])->name('login');
+Route::post('/action',[OrderController::class, 'action'])->name('action');
+Route::post('/login',[OrderController::class, 'auth'])->name('auth');
+Route::get('/orders',[OrderController::class, 'orders'])->name('orders');
+Route::get('/clients',[OrderController::class, 'clients'])->name('clients');
+Route::get('/store',[OrderController::class, 'store'])->name('store');
+
+
